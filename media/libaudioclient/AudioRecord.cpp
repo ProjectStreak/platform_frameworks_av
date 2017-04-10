@@ -34,6 +34,7 @@
 #include <media/IAudioFlinger.h>
 #include <media/MediaAnalyticsItem.h>
 #include <media/TypeConverter.h>
+#include <media/SeempLog.h>
 
 #define WAIT_PERIOD_MS          10
 
@@ -377,6 +378,7 @@ exit:
 status_t AudioRecord::start(AudioSystem::sync_event_t event, audio_session_t triggerSession)
 {
     ALOGV("%s(%d): sync event %d trigger session %d", __func__, mPortId, event, triggerSession);
+    SEEMPLOG_RECORD(71,"");
 
     AutoMutex lock(mLock);
     if (mActive) {
