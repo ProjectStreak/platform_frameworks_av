@@ -159,5 +159,13 @@ cc_library_shared {
         "-Wno-ignored-qualifiers",
     ],
 
+    product_variables: {
+        streak: {
+            has_legacy_camera_hal1: {
+                cflags: ["-DNO_CAMERA_SERVER"],
+            },
+        },
+    },
+
 }
 
